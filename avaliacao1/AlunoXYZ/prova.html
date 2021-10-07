@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+    <title>Template Prova</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <meta charset="utf-8">
+	
+
+	
+</head>
+
+<body class="body">
+
+
+
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = function (e) {
+                e.preventDefault()
+                fetch(link.getAttribute('wm-nav'))
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+    
+</body>
+
+</html>
